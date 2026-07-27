@@ -13,7 +13,11 @@ consoantes = [
 vogais = [
     "a", "e", "i", "o", "u"
 ]
-
+estruturas_silabicas = [
+    "CV",
+    "CVC",
+    "CVV"
+]
 
 # =========================
 # CRIAÇÃO DE SÍLABAS
@@ -21,33 +25,19 @@ vogais = [
 
 def criar_silaba():
 
-    inicio = ""
+    estrutura = random.choice(estruturas_silabicas)
 
-    if encontro_consonantal:
+    silaba = ""
 
-        if random.choice([True, False]):
-            inicio = random.choice(consoantes) + random.choice(consoantes)
+    for elemento in estrutura:
 
-        else:
-            inicio = random.choice(consoantes)
+        if elemento == "C":
+            silaba += random.choice(consoantes)
 
-    else:
+        elif elemento == "V":
+            silaba += random.choice(vogais)
 
-        inicio = random.choice(consoantes)
-
-
-    nucleo = random.choice(vogais)
-
-
-    if encontro_vocalico:
-
-        if random.choice([True, False]):
-
-            nucleo += random.choice(vogais)
-
-
-    return inicio + nucleo
-
+    return silaba
 
 
 # =========================
