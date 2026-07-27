@@ -1,0 +1,12 @@
+cd C:\Users\Administrador\Downloads\STEM\LinguaEvolutiva
+
+cd dist
+
+dir
+
+.\gerador_palavras.exe
+
+
+
+ou:
+C:\Users\Administrador\Downloads\STEM\LinguaEvolutiva\dist\gerador_palavras.exe
