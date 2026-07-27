@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# PyInstaller
+build/
+dist/
+
+# VS Code
+.vscode/
+
+# Virtual environments
+.venv/
+venv/
