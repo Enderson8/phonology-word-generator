@@ -54,7 +54,14 @@ def gerar_palavra():
 
 
     return palavra
+def gerar_vocabulario(quantidade):
 
+    palavras = []
+
+    for i in range(quantidade):
+        palavras.append(gerar_palavra())
+
+    return palavras
 
 
 # =========================
@@ -65,7 +72,9 @@ def gerar_palavra():
 numero_silabas = int(
     input("Quantas sílabas terá a palavra? ")
 )
-
+quantidade_palavras = int(
+    input("Quantas palavras deseja gerar? ")
+)
 
 resposta = input(
     "Permite encontros consonantais? (s/n): "
@@ -87,6 +96,8 @@ encontro_vocalico = resposta.lower() == "s"
 # RESULTADO
 # =========================
 
-print("\nPalavra criada:")
+print("\nVocabulário gerado:")
 
-print(gerar_palavra())
+for palavra in gerar_vocabulario(quantidade_palavras):
+
+    print(palavra)
