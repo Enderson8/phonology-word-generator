@@ -13,11 +13,7 @@ consoantes = [
 vogais = [
     "a", "e", "i", "o", "u"
 ]
-estruturas_silabicas = [
-    "CV",
-    "CVC",
-    "CVV"
-]
+estruturas_silabicas = []
 
 # =========================
 # CRIAÇÃO DE SÍLABAS
@@ -63,6 +59,23 @@ def gerar_vocabulario(quantidade):
 
     return palavras
 
+# =========================
+# GERAR VOCABULÁRIO
+# =========================
+
+def gerar_vocabulario(quantidade):
+
+    palavras = []
+
+    while len(palavras) < quantidade:
+
+        nova_palavra = gerar_palavra()
+
+        if nova_palavra not in palavras:
+
+            palavras.append(nova_palavra)
+
+    return palavras
 
 # =========================
 # CONFIGURAÇÃO
@@ -90,7 +103,16 @@ resposta = input(
 
 encontro_vocalico = resposta.lower() == "s"
 
+estruturas_silabicas.append("CV")
 
+
+if encontro_consonantal:
+    estruturas_silabicas.append("CCV")
+    estruturas_silabicas.append("CVC")
+
+
+if encontro_vocalico:
+    estruturas_silabicas.append("CVV")
 
 # =========================
 # RESULTADO
