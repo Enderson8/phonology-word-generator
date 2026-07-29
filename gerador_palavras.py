@@ -78,6 +78,21 @@ def gerar_vocabulario(quantidade):
     return palavras
 
 # =========================
+# SALVAR VOCABULÁRIO
+# =========================
+
+def salvar_vocabulario(vocabulario):
+
+    with open("vocabulario.txt", "w", encoding="utf-8") as arquivo:
+
+        arquivo.write("VOCABULÁRIO GERADO\n")
+        arquivo.write("==================\n\n")
+
+        for i, palavra in enumerate(vocabulario, start=1):
+
+            arquivo.write(f"{i}. {palavra}\n")
+
+# =========================
 # CONFIGURAÇÃO
 # =========================
 
@@ -118,8 +133,14 @@ if encontro_vocalico:
 # RESULTADO
 # =========================
 
-print("\nVocabulário gerado:")
+vocabulario = gerar_vocabulario(quantidade_palavras)
 
-for palavra in gerar_vocabulario(quantidade_palavras):
+print("\nVocabulário gerado:\n")
 
-    print(palavra)
+for i, palavra in enumerate(vocabulario, start=1):
+
+    print(f"{i}. {palavra}")
+
+    salvar_vocabulario(vocabulario)
+
+print("\nVocabulário salvo em 'vocabulario.txt'.")
